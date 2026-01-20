@@ -1,0 +1,19 @@
+[project]
+name = "russonos"
+version = "0.1.0"
+description = "Russound RNET utilities"
+requires-python = ">=3.9"
+license = "GPL-3.0-or-later"
+
+# Runtime dependencies
+dependencies = [
+    "soco>=0.30.0",
+    "aiorussound>=0.3.0",
+]
+
+[tool.setuptools]
+py-modules = ["russound", "DiscoverSonos"]
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"

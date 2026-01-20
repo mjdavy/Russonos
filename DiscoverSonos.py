@@ -6,10 +6,18 @@ import russound
 from pprint import pprint
 from soco.events import event_listener
 
-device = soco.discovery.by_name('Kitchen')
-sub = device.avTransport.subscribe()
+#device = soco.discovery.by_name('Kitchen')
+#sub = device.avTransport.subscribe()
 
-russ = russound.Russound('10.0.0.5', 80)
+import logging
+
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="%(asctime)s %(name)s %(levelname)s: %(message)s"
+)
+
+
+russ = russound.Russound('192.168.1.213', 9621)
 russ.connect()
 zone = '1'
 result = russ.get_source(1, zone)
